@@ -12,6 +12,7 @@ class Grid
     bool IsWithinBounds(int row, int col);
     int GetRows() { return rows; }
     int GetCols() { return cols; }
+    void FillRand();
   private:
     int rows;
     int cols;
