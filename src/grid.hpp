@@ -8,6 +8,10 @@ class Grid
     : rows(n_height/n_cell_size), cols(n_width/n_cell_size), cell_size(n_cell_size), cells(rows, std::vector<int>(cols, 0)) {};
     void Draw();
     void SetValue(int row, int col, int value);
+    int GetValue(int row, int col);
+    bool IsWithinBounds(int row, int col);
+    int GetRows() { return rows; }
+    int GetCols() { return cols; }
   private:
     int rows;
     int cols;
