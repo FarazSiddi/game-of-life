@@ -17,6 +17,30 @@ int main()
 
     while(!WindowShouldClose())
     {
+        if(IsKeyPressed(KEY_ENTER))
+        {
+            simulation.Start();
+            SetWindowTitle("Game of Life Simulator - Running");
+        }
+        if(IsKeyPressed(KEY_SPACE))
+        {
+            simulation.Stop();
+            SetWindowTitle("Game of Life Simulator - Stopped");
+        }
+        if(IsKeyPressed(KEY_UP))
+        {
+            fps += 2;
+            SetTargetFPS(fps);
+        }
+        if(IsKeyPressed(KEY_DOWN)) 
+        {
+            if(fps > 2)
+            {
+                fps -= 2;
+                SetTargetFPS(fps);
+            }
+        }
+
         simulation.Update();
 
         BeginDrawing();
