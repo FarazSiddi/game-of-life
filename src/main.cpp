@@ -8,7 +8,7 @@ int main()
 
     const int SCREEN_WIDTH = 750;
     const int SCREEN_HEIGHT = 750;
-    const int CELL_SIZE = 4;
+    const int CELL_SIZE = 10;
     int fps = 12;
 
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Game of Life Simulator");
@@ -17,6 +17,15 @@ int main()
 
     while(!WindowShouldClose())
     {
+        if(IsMouseButtonDown(MOUSE_LEFT_BUTTON))
+        {
+            // simulation.SetCellValue(GetMouseX() / CELL_SIZE, GetMouseY() / CELL_SIZE, 1);
+            Vector2 mousePosition = GetMousePosition();
+            int row = mousePosition.y / CELL_SIZE;
+            int col = mousePosition.x / CELL_SIZE;
+
+            simulation.ToggleCell(row, col);
+        }
         if(IsKeyPressed(KEY_ENTER))
         {
             simulation.Start();
@@ -39,6 +48,15 @@ int main()
                 fps -= 2;
                 SetTargetFPS(fps);
             }
+        }
+        if(IsKeyPressed(KEY_C))
+        {
+            simulation.ClearGrid();
+        }
+
+        if(IsKeyPressed(KEY_R))
+        {
+            simulation.CreateRandomState();
         }
 
         simulation.Update();

@@ -75,3 +75,27 @@ void Simulation::Update()
     grid = tempGrid;
   }
 }
+
+void Simulation::ClearGrid()
+{
+  if(!IsRunning())
+  {
+    grid.Clear();
+  }
+}
+
+void Simulation::CreateRandomState()
+{
+  if(!IsRunning())
+  {
+    grid.FillRand();
+  }
+}
+
+void Simulation::ToggleCell(int row, int col)
+{
+  if(!IsRunning())
+  {
+    grid.ToggleCell(row, col);
+  }
+}

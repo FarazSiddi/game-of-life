@@ -13,6 +13,8 @@ class Grid
     int GetRows() { return rows; }
     int GetCols() { return cols; }
     void FillRand();
+    void Clear();
+    void ToggleCell(int row, int col);
   private:
     int rows;
     int cols;

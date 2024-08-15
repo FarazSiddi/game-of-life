@@ -51,3 +51,22 @@ void Grid::FillRand()
   }
 
 }
+
+void Grid::Clear()
+{
+  for(int row = 0; row < rows; row++)
+  {
+    for(int col = 0; col < cols; col++)
+    {
+      cells[row][col] = 0;
+    }
+  }
+}
+
+void Grid::ToggleCell(int row, int col)
+{
+  if(IsWithinBounds(row, col))
+  {
+    cells[row][col] = !cells[row][col];
+  }
+}
