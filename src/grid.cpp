@@ -8,7 +8,7 @@ void Grid::Draw()
     for(int col = 0; col < cols; col++)
     {
       Color color = cells[row][col] ? Color{0, 255, 0, 255} : Color{55, 55, 55, 255};
-      DrawRectangle(col * cell_size, row * cell_size, cell_size-1, cell_size-1, color);
+      DrawRectangle(25 + col * cell_size, 75 + row * cell_size, cell_size-1, cell_size-1, color);
     }
   }
 }
