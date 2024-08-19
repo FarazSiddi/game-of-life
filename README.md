@@ -7,7 +7,7 @@ A simulation of Conway's Game of Life using C++ and Raylib
 <p width="600">
   Game of Life:
   </br>
-    <img src="https://github.com/FarazSiddi/game-of-life/blob/master/images/cgol.png" alt="cgol" width="600" >
+    <img src="https://github.com/FarazSiddi/game-of-life/blob/main/images/cgol.png" alt="cgol" width="600" >
 </p>
 
 ## About the Project
